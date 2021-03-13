@@ -1,9 +1,40 @@
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { useCallback } from "react";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import ListItem from 'components/ListItem';
 
-const List = ({ listItems }) => {
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
+const getListStyle = isDraggingOver => ({
+  background: isDraggingOver ? "lightblue" : "lightgrey",
+  padding: 8,
+  width: 250,
+  minHeight: 50
+});
+
+const List = ({ listItems, handleSetListItems }) => {
+  const onDragEnd = useCallback(({ source, destination }) => {
+    // dropped outside the list
+    if (!destination) {
+      return;
+    }
+
+    const items = reorder(
+      listItems,
+      source.index,
+      destination.index
+    );
+
+    handleSetListItems(items);
+  }, [listItems, handleSetListItems])
 
   return (
-    <DragDropContext onDragEnd={this.onDragEnd}>
+    <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="droppable">
         {(provided, snapshot) => (
           <div
@@ -11,21 +42,7 @@ const List = ({ listItems }) => {
             ref={provided.innerRef}
             style={getListStyle(snapshot.isDraggingOver)}>
             {listItems.map((item, index) => (
-              <Draggable key={item.id} draggableId={item.id} index={index}>
-                {(provided, snapshot) => (
-                  <div
-                    ref={provided.innerRef}
-                    {...provided.draggableProps}
-                    {...provided.dragHandleProps}
-                    style={getItemStyle(
-                      snapshot.isDragging,
-                      provided.draggableProps.style
-                    )}
-                  >
-                    {item.content}
-                  </div>
-                )}
-              </Draggable>
+              <ListItem itemId={item.id} itemContent={item.entry} index={index} />
             ))}
             {provided.placeholder}
           </div>

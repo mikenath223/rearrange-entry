@@ -1,4 +1,4 @@
-export {List} from './List';
-export {ListItem} from './ListItem';
-export {Input} from './Input';
-export {Button} from './Button';
+export {default as List} from './List';
+export {default as ListItem} from './ListItem';
+export {default as Input} from './Input';
+export {default as Button} from './Button';
