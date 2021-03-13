@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should match snapshot 1`] = `
+<div>
+  <div
+    data-rbd-droppable-context-id="0"
+    data-rbd-droppable-id="droppable"
+    style="background: lightgrey; padding: 8px; width: 250px; min-height: 50px;"
+  />
+</div>
+`;

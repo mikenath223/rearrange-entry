@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<div>
+  <main
+    class="wrapper"
+  >
+    <h5
+      class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+    >
+      Reorder Phone Numbers
+    </h5>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-direction-xs-column"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-7"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
+            data-shrink="true"
+          >
+            Enter phone number
+          </label>
+          <div
+            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiOutlinedInput-input"
+              inputmode="numeric"
+              role="input"
+              type="text"
+              value="(___) ___-____"
+            />
+            <fieldset
+              aria-hidden="true"
+              class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                class="PrivateNotchedOutline-legendLabelled-3 PrivateNotchedOutline-legendNotched-4"
+              >
+                <span>
+                  Enter phone number
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-4"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained Mui-disabled Mui-disabled"
+          disabled=""
+          role="button"
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <span
+              class="MuiButton-startIcon MuiButton-iconSizeMedium"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                />
+              </svg>
+            </span>
+            Add
+          </span>
+        </button>
+      </div>
+    </div>
+    <hr
+      class="divider"
+    />
+    <h6
+      class="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom"
+    >
+      Phone Numbers
+    </h6>
+    <div
+      data-rbd-droppable-context-id="0"
+      data-rbd-droppable-id="droppable"
+      style="background: lightgrey; padding: 8px; width: 250px; min-height: 50px;"
+    />
+  </main>
+</div>
+`;

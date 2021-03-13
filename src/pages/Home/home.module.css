@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* stylelint-disable-next-line */
+  width: min(500px, 93%);
+  margin: 100px auto 50px auto;
+}
+
+.divider {
+  width: 250px;
+  margin: 20px 0;
+  color: grey;
+}

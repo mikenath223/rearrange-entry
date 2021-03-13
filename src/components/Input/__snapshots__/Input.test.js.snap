@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should match snapshot 1`] = `
+<div>
+  <div
+    class="MuiFormControl-root MuiTextField-root"
+  >
+    <label
+      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+      data-shrink="false"
+    >
+      Enter phone number
+    </label>
+    <div
+      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input MuiOutlinedInput-input"
+        inputmode="numeric"
+        role="input"
+        type="text"
+        value=""
+      />
+      <fieldset
+        aria-hidden="true"
+        class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+      >
+        <legend
+          class="PrivateNotchedOutline-legendLabelled-3"
+        >
+          <span>
+            Enter phone number
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;
