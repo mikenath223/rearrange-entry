@@ -12,22 +12,25 @@ const HomePage = () => {
     const item = { id: uuidv4(), entry };
 
     setListItems([item, ...listItems]);
-    setEntry('_');
+    setEntry('');
   }
 
   return <main className={styles.wrapper}>
+    <Typography variant="h3" gutterBottom>
+      Numbers Rearranger
+    </Typography>
     <Grid container justify="center" alignItems="center" spacing={3}>
       <Grid item xs={5}>
         <Input entry={entry}
           handleSetEntry={(val) => setEntry(val)} />
       </Grid>
       <Grid item xs={3}>
-        <Button onClick={handleAddEntry} disabled={entry.length === 10} />
+        <Button onClick={handleAddEntry} disabled={entry.length !== 10} />
       </Grid>
     </Grid>
     <hr className={styles.divider} />
     <Typography variant="h6" gutterBottom>
-      Phone Number List
+      Phone Numbers
     </Typography>
     <List listItems={listItems} handleSetListItems={setListItems} />
   </main>

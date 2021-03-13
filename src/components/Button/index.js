@@ -8,7 +8,6 @@ const CustomButton = ({ ...other }) => {
       variant="contained"
       color="default"
       startIcon={<AddCircleOutline />}
-      disabled
       {...other}>
       Add
     </Button>

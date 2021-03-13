@@ -11,7 +11,7 @@ const reorder = (list, startIndex, endIndex) => {
 };
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? "lightblue" : "lightgrey",
+  background: isDraggingOver ? "black" : "lightgrey",
   padding: 8,
   width: 250,
   minHeight: 50
@@ -42,7 +42,7 @@ const List = ({ listItems, handleSetListItems }) => {
             ref={provided.innerRef}
             style={getListStyle(snapshot.isDraggingOver)}>
             {listItems.map((item, index) => (
-              <ListItem itemId={item.id} itemContent={item.entry} index={index} />
+              <ListItem key={item.id} itemId={item.id} itemContent={item.entry} index={index} />
             ))}
             {provided.placeholder}
           </div>

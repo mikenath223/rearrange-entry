@@ -5,7 +5,6 @@ const CustomNumberFormat = ({ inputRef, onChange, name, ...other }) => {
 
   return (
     <NumberFormat
-      {...other}
       getInputRef={inputRef}
       onValueChange={(values) => {
         onChange({
@@ -19,6 +18,7 @@ const CustomNumberFormat = ({ inputRef, onChange, name, ...other }) => {
       mask="_"
       format="(###) ###-####"
       isNumericString
+      {...other}
     />
   );
 }
