@@ -1,17 +1,22 @@
+import PropTypes from 'prop-types';
 import { Button } from '@material-ui/core';
 import { AddCircleOutline } from '@material-ui/icons';
 
-const CustomButton = ({ ...other }) => {
+const CustomButton = ({ handleClick, isDisabled }) => (
+  <Button
+    variant="contained"
+    color="default"
+    startIcon={<AddCircleOutline />}
+    onClick={handleClick}
+    disabled={isDisabled}
+  >
+    Add
+  </Button>
+);
 
-  return (
-    <Button
-      variant="contained"
-      color="default"
-      startIcon={<AddCircleOutline />}
-      {...other}>
-      Add
-    </Button>
-  )
+CustomButton.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  isDisabled: PropTypes.bool.isRequired,
 };
 
 export default CustomButton;

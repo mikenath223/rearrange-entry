@@ -13,27 +13,31 @@ const HomePage = () => {
 
     setListItems([item, ...listItems]);
     setEntry('');
-  }
+  };
 
-  return <main className={styles.wrapper}>
-    <Typography variant="h3" gutterBottom>
-      Numbers Rearranger
-    </Typography>
-    <Grid container justify="center" alignItems="center" spacing={3}>
-      <Grid item xs={5}>
-        <Input entry={entry}
-          handleSetEntry={(val) => setEntry(val)} />
+  return (
+    <main className={styles.wrapper}>
+      <Typography variant="h5" gutterBottom>
+        Numbers Rearranger
+      </Typography>
+      <Grid container justify="center" alignItems="center" spacing={1}>
+        <Grid item xs={7}>
+          <Input
+            entry={entry}
+            handleSetEntry={val => setEntry(val)}
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <Button handleClick={handleAddEntry} isDisabled={entry.length !== 10} />
+        </Grid>
       </Grid>
-      <Grid item xs={3}>
-        <Button onClick={handleAddEntry} disabled={entry.length !== 10} />
-      </Grid>
-    </Grid>
-    <hr className={styles.divider} />
-    <Typography variant="h6" gutterBottom>
-      Phone Numbers
-    </Typography>
-    <List listItems={listItems} handleSetListItems={setListItems} />
-  </main>
-}
+      <hr className={styles.divider} />
+      <Typography variant="h6" gutterBottom>
+        Phone Numbers
+      </Typography>
+      <List listItems={listItems} handleSetListItems={setListItems} />
+    </main>
+  );
+};
 
 export default HomePage;

@@ -1,5 +1,6 @@
-import { useCallback } from "react";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { useCallback } from 'react';
+import PropTypes from 'prop-types';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import ListItem from 'components/ListItem';
 
 const reorder = (list, startIndex, endIndex) => {
@@ -11,10 +12,10 @@ const reorder = (list, startIndex, endIndex) => {
 };
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? "black" : "lightgrey",
+  background: isDraggingOver ? 'black' : 'lightgrey',
   padding: 8,
   width: 250,
-  minHeight: 50
+  minHeight: 50,
 });
 
 const List = ({ listItems, handleSetListItems }) => {
@@ -27,11 +28,11 @@ const List = ({ listItems, handleSetListItems }) => {
     const items = reorder(
       listItems,
       source.index,
-      destination.index
+      destination.index,
     );
 
     handleSetListItems(items);
-  }, [listItems, handleSetListItems])
+  }, [listItems, handleSetListItems]);
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
@@ -40,7 +41,8 @@ const List = ({ listItems, handleSetListItems }) => {
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
-            style={getListStyle(snapshot.isDraggingOver)}>
+            style={getListStyle(snapshot.isDraggingOver)}
+          >
             {listItems.map((item, index) => (
               <ListItem key={item.id} itemId={item.id} itemContent={item.entry} index={index} />
             ))}
@@ -50,6 +52,14 @@ const List = ({ listItems, handleSetListItems }) => {
       </Droppable>
     </DragDropContext>
   );
-}
+};
 
-export default List
+List.propTypes = {
+  listItems: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    entry: PropTypes.string.isRequired,
+  })).isRequired,
+  handleSetListItems: PropTypes.func.isRequired,
+};
+
+export default List;
