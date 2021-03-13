@@ -18,6 +18,7 @@ const CustomNumberFormat = ({
     mask="_"
     format="(###) ###-####"
     isNumericString
+    role="input"
     {...other}
   />
 );

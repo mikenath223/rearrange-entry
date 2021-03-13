@@ -20,7 +20,6 @@ const getListStyle = isDraggingOver => ({
 
 const List = ({ listItems, handleSetListItems }) => {
   const onDragEnd = useCallback(({ source, destination }) => {
-    // dropped outside the list
     if (!destination) {
       return;
     }

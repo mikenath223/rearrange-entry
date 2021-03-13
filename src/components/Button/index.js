@@ -9,6 +9,7 @@ const CustomButton = ({ handleClick, isDisabled }) => (
     startIcon={<AddCircleOutline />}
     onClick={handleClick}
     disabled={isDisabled}
+    role="button"
   >
     Add
   </Button>

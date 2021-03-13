@@ -19,11 +19,9 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/aria-role": [2, { "ignoreNonDOM": true }],
     "no-shadow": "off",
     "arrow-parens": ["error", "as-needed"]
   },
-  "ignorePatterns": [
-    "dist/",
-    "build/"
-  ]
+  "ignorePatterns": ["dist/", "build/"]
 }

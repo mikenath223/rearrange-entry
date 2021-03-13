@@ -18,9 +18,9 @@ const HomePage = () => {
   return (
     <main className={styles.wrapper}>
       <Typography variant="h5" gutterBottom>
-        Numbers Rearranger
+        Reorder Phone Numbers
       </Typography>
-      <Grid container justify="center" alignItems="center" spacing={1}>
+      <Grid container direction="column" spacing={3}>
         <Grid item xs={7}>
           <Input
             entry={entry}

@@ -3,16 +3,11 @@ import { Draggable } from 'react-beautiful-dnd';
 import NumberFormat from 'react-number-format';
 
 const getItemStyle = (isDragging, draggableStyle) => ({
-  // some basic styles to make the items look a bit nicer
   userSelect: 'none',
   padding: 16,
   margin: `0 0 ${8}px 0`,
   color: isDragging ? 'black' : 'lightgrey',
-
-  // change background colour if dragging
   background: isDragging ? 'silver' : 'grey',
-
-  // styles we need to apply on draggables
   ...draggableStyle,
 });
 
@@ -34,8 +29,8 @@ const ListItem = ({ itemId, itemContent, index }) => (
           mask="_"
           format="(###) ###-####"
           displayType="text"
+          role="listitem"
         />
-        {/* {itemContent} */}
       </div>
     )}
   </Draggable>
